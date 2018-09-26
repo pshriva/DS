@@ -2,8 +2,8 @@ package MultiplyStrings;
 //LCA
 public class Solution {
 	public static void main(String args[]) {
-		String num1 = "000001";
-		String num2 = "0001";
+		String num1 = "1";
+		String num2 = "1";
 		String product = getProduct(num1, num2);
 		System.out.println(product);
 	}

@@ -1,5 +1,7 @@
 package SwapNodesInPairs;
 
+import javax.xml.soap.Node;
+
 //LC accepted
 public class Solution {
 

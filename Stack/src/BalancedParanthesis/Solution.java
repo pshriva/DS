@@ -26,7 +26,7 @@ public class Solution {
 			}
 			stack.pop();
 		}
-		return true;
+		return stack.isEmpty();
 	}
 	
 	

@@ -11,7 +11,6 @@ public class LinkedList {
 		Node prev = null;
 		Node temp = head;
 		while(temp.next != null) {
-			prev = temp;
 			temp = temp.next;
 		}
 		prev = temp;
