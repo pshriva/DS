@@ -1,6 +1,6 @@
 package BinarySearchTreeIterator;
 
-import java.util.Stack;
+import java.util.*;
 
 public class BSTIterator {
 	Stack<TreeNode> stack;

@@ -32,4 +32,64 @@ public class Solution {
 		getAllPaths(root.left, paths, current + root.val + "->");
 		getAllPaths(root.right, paths, current  + root.val + "->");
 	}
+	
+	
+	
+//	https://leetcode.com/problems/binary-tree-paths/discuss/68278/My-Java-solution-in-DFS-BFS-recursion
+//	BFS
+//	public List<String> binaryTreePaths(TreeNode root) {
+//	    List<String> list=new ArrayList<String>();
+//	    Queue<TreeNode> qNode=new LinkedList<TreeNode>();
+//	    Queue<String> qStr=new LinkedList<String>();
+//	    
+//	    if (root==null) return list;
+//	    qNode.add(root);
+//	    qStr.add("");
+//	    while(!qNode.isEmpty()) {
+//	        TreeNode curNode=qNode.remove();
+//	        String curStr=qStr.remove();
+//	        
+//	        if (curNode.left==null && curNode.right==null) list.add(curStr+curNode.val);
+//	        if (curNode.left!=null) {
+//	            qNode.add(curNode.left);
+//	            qStr.add(curStr+curNode.val+"->");
+//	        }
+//	        if (curNode.right!=null) {
+//	            qNode.add(curNode.right);
+//	            qStr.add(curStr+curNode.val+"->");
+//	        }
+//	    }
+//	    return list;
+//	}
+	
+	
+	
+	
+//	https://leetcode.com/problems/binary-tree-paths/discuss/68278/My-Java-solution-in-DFS-BFS-recursion
+//	DFS
+	
+//	public List<String> binaryTreePaths(TreeNode root) {
+//	    List<String> list=new ArrayList<String>();
+//	    Stack<TreeNode> sNode=new Stack<TreeNode>();
+//	    Stack<String> sStr=new Stack<String>();
+//	    
+//	    if(root==null) return list;
+//	    sNode.push(root);
+//	    sStr.push("");
+//	    while(!sNode.isEmpty()) {
+//	        TreeNode curNode=sNode.pop();
+//	        String curStr=sStr.pop();
+//	        
+//	        if(curNode.left==null && curNode.right==null) list.add(curStr+curNode.val);
+//	        if(curNode.left!=null) {
+//	            sNode.push(curNode.left);
+//	            sStr.push(curStr+curNode.val+"->");
+//	        }
+//	        if(curNode.right!=null) {
+//	            sNode.push(curNode.right);
+//	            sStr.push(curStr+curNode.val+"->");
+//	        }
+//	    }
+//	    return list;
+//	}
 }

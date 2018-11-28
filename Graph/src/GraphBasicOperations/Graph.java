@@ -39,21 +39,42 @@ public class Graph {
 		}
 	}
 	
-	//Recursive
+	// DFS Recursive
+//	public void getDFS() {
+//		boolean[] visited = new boolean[V];
+//		//for loop so as to catch all the nodes even in a disconnected graph
+//		for(int i = 0; i< V; i++) {
+//			if(!visited[i]) {getDFS(i, visited);}
+//		}
+//	}
+//	private void getDFS(int n, boolean []visited) {
+//		visited[n] = true;
+//		System.out.println(n);
+//		for(int i : adjacencyList[n]) {
+//			if(!visited[i]) {
+//				getDFS(i, visited);
+//			}
+//		}
+//	}
+	
+//	DFS Iterative
+	
 	public void getDFS() {
-		boolean[] visited = new boolean[V];
-		//for loop so as to catch all the nodes even in a disconnected graph
-		for(int i = 0; i< V; i++) {
-			if(!visited[i]) {getDFS(i, visited);}
-		}
-	}
-	private void getDFS(int n, boolean []visited) {
-		visited[n] = true;
-		System.out.println(n);
-		for(int i : adjacencyList[n]) {
-			if(!visited[i]) {
-				getDFS(i, visited);
+		boolean visited[] = new boolean[V];
+		Stack<Integer> stack = new Stack<>();
+		stack.push(0);
+		while(!stack.isEmpty()){
+			int node = stack.pop();
+			if(!visited[node]){
+				System.out.println(node);
+				visited[node] = true;
+			
+			for(int i : adjacencyList[node]){
+				if(!visited[i]){
+					stack.push(i);
+				}
+			}
 			}
 		}
-	}
+  	}
 }

@@ -8,6 +8,7 @@ import java.util.Stack;
 public class Solution {
 	public static void main(String args[]) {
 		String infix = "(A+B)*(C+D)";
+//		String infix = "A+B*C";
 		String postfix = getPostfix(infix);
 		System.out.println(postfix);
 	}

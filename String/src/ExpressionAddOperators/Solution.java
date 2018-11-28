@@ -5,8 +5,10 @@ import java.util.List;
 //LCA
 public class Solution {
 	public static void main(String[] args){
-		String num = "232";
-		int target = 8;
+//		String num = "232";
+//		int target = 8;
+		String num = "105";
+		int target = 5;
 		List<String> list = getTargetExpressions(num, target);
 		System.out.println(list);
 	}

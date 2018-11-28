@@ -1,8 +1,9 @@
 package Subset;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
+//LCA
 public class Solution {
 	public static void main(String args[]) {
 		int[] nums = {1,2,3};
@@ -13,6 +14,7 @@ public class Solution {
 	private static List<List<Integer>> getAllSubsets(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();
 		result.add(new ArrayList<>());
+		int k = 0;
 		for(int i : nums) {
 			List<List<Integer>> temp = new ArrayList<>();
 			for(List<Integer> l : result) {

@@ -30,5 +30,7 @@ public class Solution {
 			}
 		}
 		return maxLength;
+		
+//		return Math.max(maxLength, s.length() - left) if at most K distinct characters is asked , not exact K
 	}
 }

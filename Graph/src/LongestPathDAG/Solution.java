@@ -3,7 +3,8 @@ package LongestPathDAG;
 public class Solution {
 
 	public static void main(String[] args) {
-		Graph g = new Graph(8);
+		Graph g = new Graph(9);
+		g.createEdge(8, 0);
 		g.createEdge(0, 2);
 		g.createEdge(0, 3);
 		g.createEdge(0, 4);

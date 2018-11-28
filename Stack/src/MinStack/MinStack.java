@@ -1,4 +1,7 @@
 package MinStack;
+
+import java.util.EmptyStackException;
+
 //LCA
 public class MinStack {
 	Node head;
@@ -10,6 +13,9 @@ public class MinStack {
 		}
 	}
 	public void pop() {
+		if(head == null){
+			throw new EmptyStackException();
+		}
 		head = head.next;
 	}
 	public int top() {

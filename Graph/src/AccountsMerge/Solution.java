@@ -9,7 +9,7 @@ public class Solution {
 																	Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
 																	Arrays.asList("Mary", "mary@mail.com")));
 		List<List<String>> result = mergeAccounts(accounts);
-		System.out.println(result);
+//		System.out.println(result);
 	}
 
 	private static List<List<String>> mergeAccounts(List<List<String>> accounts) {
@@ -28,7 +28,8 @@ public class Solution {
 				graph.get(account.get(i-1)).add(email);
 			}
 		}
-		
+		System.out.println(graph);
+		System.out.println(names);
 		Set<String> visited = new HashSet<>();
 		List<List<String>> result = new ArrayList<>();
 		for(String email : names.keySet()){

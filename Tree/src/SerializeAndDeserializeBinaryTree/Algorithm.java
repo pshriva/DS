@@ -5,31 +5,63 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Algorithm {
-
-	//BFS
+	
+	public void InorderTraversal(TreeNode t) {
+		if(t == null){return;}
+		InorderTraversal(t.left);
+		System.out.println(t.val);
+		InorderTraversal(t.right);
+		
+	}
+	
+//	BFS
 //	public String serialize(TreeNode root) {
 //		StringBuilder sb = new StringBuilder();
+//		if(root == null){return null;}
 //		Queue<TreeNode> queue = new LinkedList<>();
 //		queue.add(root);
 //		while(!queue.isEmpty()){
-//			TreeNode n = queue.poll();
-//			if(n != null){
-//				sb.append(n.val).append(" ");
-//				queue.add(n.left);
-//				queue.add(n.right);
-//			}else{
+//			TreeNode node = queue.poll();
+//			if(node == null){
 //				sb.append("null ");
+//			}else{
+//				sb.append(node.val + " ");
+//				queue.add(node.left);
+//				queue.add(node.right);
 //			}
 //		}
 //		return sb.toString();
 //	}
 //	
-//	public TreeNode deserialize(String s){
+//	With while loop
+//	public TreeNode deserialize(String s) {
+//		if(s == null){return null;}
 //		String[] nodes = s.split(" ");
-//		Queue<TreeNode> queue = new LinkedList<>();
 //		TreeNode root = new TreeNode(Integer.parseInt(nodes[0]));
+//		Queue<TreeNode> queue = new LinkedList<>();
 //		queue.add(root);
-//		for(int i = 1; i< nodes.length; i++){
+//		int i = 0;
+//		while(!queue.isEmpty()){
+//			TreeNode parent = queue.poll();
+//			if(!nodes[++i].equals("null")){
+//				parent.left = new TreeNode(Integer.parseInt(nodes[i]));
+//				queue.add(parent.left);
+//			}
+//			if(!nodes[++i].equals("null")){
+//				parent.right = new TreeNode(Integer.parseInt(nodes[i]));
+//				queue.add(parent.right);
+//			}
+//		}
+//		return root;
+//	}
+	
+//	With for loop
+//	public TreeNode deserialize(String s) {
+//		String[] nodes = s.split(" ");
+//		TreeNode root = new TreeNode(Integer.parseInt(nodes[0]));
+//		Queue<TreeNode> queue = new LinkedList<>();
+//		queue.add(root);
+//		for(int i = 1; i<nodes.length; i++){
 //			TreeNode parent = queue.poll();
 //			if(!nodes[i].equals("null")){
 //				parent.left = new TreeNode(Integer.parseInt(nodes[i]));
@@ -42,23 +74,15 @@ public class Algorithm {
 //		}
 //		return root;
 //	}
-//DFS
-	
-	public void InorderTraversal(TreeNode t) {
-		if(t == null){return;}
-		InorderTraversal(t.left);
-		System.out.println(t.val);
-		InorderTraversal(t.right);
-		
-	}
 
+////DFS
 	public String serialize(TreeNode root) {
 		StringBuilder sb = new StringBuilder();
 	    serialize(root, sb);
 	    return sb.toString();
 	}
-	//DFS
 
+//
 	private void serialize(TreeNode root, StringBuilder sb) {
 		if(root == null){
 			sb.append("null ");
@@ -83,7 +107,6 @@ public class Algorithm {
 		root.right = createTree(queue);
 		return root;
 	}
-	
-	
-
 }
+//	
+	
